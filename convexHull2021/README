@@ -1,0 +1,53 @@
+
+/*  This is a source file for the Convex Hull 2021 project for SVI 
+    made as a part of the Mathematics for Industry course at Utrecht
+    University by David de Best, Mees Jager, Luuk Lagendijk, Joost
+    Mein, Joost Oliemans, Hannah Onverwagt, Andeos Rigas, Corijn 
+    Rudrum, Mark Sterkenburg en Hannah van der Zande.               */
+
+/* -----------------------------------------------------------------
+    USER GUIDE:
+
+    This program is used to calculate basic properties of a convex
+    hull and to build a surface and volume voxelisation of a convex
+    hull. It is executed by running ./HullAnalysis in a terminal.
+    
+    It uses a binary input file containing points in three 
+    dimensions, where the first integer in the file represents the
+    number of points N in the file, and then N long doubles follow
+    containing those points. The program also uses a binary input 
+    file produced by the 2019 SVI project that calculates a convex
+    hull from a set of points. That project uses the same binary 
+    point file that is used here, and outputs a binary file
+    containing the indices of the points in that list that are used
+    in the convex hull. This file contains an integer M indicating 
+    the number of indices in the file, followed by M integers
+    representing all these indices. Each triple of indices represents
+    a triangle.
+
+    The output is two text files containing data on the basic
+    properties of a convex hull and the comparison with a second
+    convex hull, and two binary files with a surface and volume
+    voxelisation. The content of these binary files is described
+    in our paper.
+
+    The input files can be given directly when the program asks for 
+    a file or by giving the names as arguments when running the
+    program following the syntax:
+    ./HullAnalysis.exe PointsInput IndexInput BasicPropertiesOutput
+    SurfaceVoxelisationOutput VolumeVoxelisationOutput
+    ComparisonPointsInput ComparisonIndexInput ComparisonOutput
+    An example could be:
+    ./HullAnalysis.exe TestInput/sphere-points TestInput/sphere-indices 
+    TestOutput/BasicProperties TestOutput/SurfaceVoxelisation 
+    TestOutput/VolumeVoxelisation TestInput/sphere-points 
+    TestInput/sphere-indices TestOutput/ComparisonData
+
+    When making changes to the source code, the project can be
+    compiled using a c compiler, for example executing the command
+    clang main.c -o HullAnalysis -fopenmp
+    OR   
+    gcc main.c -o HullAnalysis -fopenmp
+    or you can run the provided compileHullAnalysis.bat
+
+   -----------------------------------------------------------------*/
